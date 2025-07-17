@@ -3,6 +3,19 @@ Objetivo desse projeto é aprender algumas funções básicas de streamlit.
 Para isso foi desenvolvido uma aplicação web onde é possível fazer o upload de uma planilha
 com os dados em formato .csv e o site vai ficar responsável por formatar os dados em tabela e apresentar alguns gráficos.
 
+## Estrutura do csv
+Futuramente talvez faça updates para suportar outras estruturas, mas no modelo atual para que o aplicativo funcione corretamente deve estar estruturado da seguinte forma:
+| Data       | Instituição | Valor  |
+| ---------- | ----------- | ------ |
+| dd/mm/YYYY | Nome Banco  | 0000.00 |
+
+### 📁 Exemplo de conteúdo do arquivo:
+```csv
+Data,Instituição,Valor
+05/07/2024,Iron Bank,100.00
+06/07/2024,Iron Bank,2000.50
+```
+
 ## Ferramentas utilizadas
 - ### [Anaconda3](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html)
 A realização do projeto foi feito dentro de um ambiente virtual a partir do anaconda. Para garantir o funcionamento na sua máquina é recomendado fazer o mesmo.
@@ -55,6 +68,6 @@ st.tabs() # Insere containers separados por janelas.
 
 #### Gráficos streamlit
 ```py
-line_chart() # Cria um gráfico interativo de linhas.
-bar_chart() # Cria um gráfico interativo de barras.
+st.line_chart() # Cria um gráfico interativo de linhas.
+st.bar_chart() # Cria um gráfico interativo de barras.
 ```
