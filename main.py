@@ -4,6 +4,7 @@ import pandas as pd
 import requests
 import datetime
 
+@st.cache_data(ttl="1day")
 def get_selic():
     url = 'https://bcb.gov.br/api/servico/sitebcb/historicotaxasjuros'
     resp = requests.get(url)
@@ -224,4 +225,7 @@ if file_upload:
             }
 
             st.dataframe(meses, column_config=columns_config_meses)
+        with tab_graph:
+            st.line_chart(meses[['Atingimento Ano','Atingimento Esperado']])
+
 # %%
